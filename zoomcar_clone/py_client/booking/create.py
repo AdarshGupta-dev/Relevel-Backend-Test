@@ -2,6 +2,7 @@ import requests
 
 endpoint = "http://localhost:8000/booking/create/"
 
+Token = ""
 
 data = {
     "vehicle": "maruti",
@@ -9,7 +10,8 @@ data = {
     "duration": "4",
     "renter": "1",
 }
-response = requests.post(endpoint, data)
+
+response = requests.post(endpoint, data, headers={'Authorization': f'Bearer {Token}'})
 
 
 # print(response.text)
