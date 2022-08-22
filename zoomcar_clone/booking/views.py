@@ -4,11 +4,16 @@ from rest_framework import generics
 
 from rest_framework.permissions import IsAuthenticated, IsAdminUser
 
+from booking import serializers
+
 
 class BookingCreateAPIView(generics.CreateAPIView):
     permission_classes = [IsAuthenticated]
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
+
+    def perform_create(self, serializer):
+        serializer.save(renter=self.request.user)
 
 
 class BookingDetailAPIView(generics.RetrieveAPIView):
@@ -18,9 +23,14 @@ class BookingDetailAPIView(generics.RetrieveAPIView):
     serializer_class = BookingSerializer
     lookup_field = "bookingID"
 
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            return Booking.objects.filter(renter=self.request.user)
+        return Booking.objects.none()
+
 
 class BookingListAPIView(generics.ListAPIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [IsAdminUser]
 
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
@@ -33,6 +43,11 @@ class BookingUpdateAPIView(generics.UpdateAPIView):
     serializer_class = BookingSerializer
     lookup_field = "bookingID"
 
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            return Booking.objects.filter(renter=self.request.user)
+        return Booking.objects.none()
+
 
 class BookingDeleteAPIView(generics.DestroyAPIView):
     permission_classes = [IsAuthenticated]
@@ -40,3 +55,8 @@ class BookingDeleteAPIView(generics.DestroyAPIView):
     queryset = Booking.objects.all()
     serializer_class = BookingSerializer
     lookup_field = "bookingID"
+
+    def get_queryset(self):
+        if self.request.user.is_authenticated:
+            return Booking.objects.filter(renter=self.request.user)
+        return Booking.objects.none()

@@ -12,7 +12,7 @@ class Booking(models.Model):
     vehicle = models.CharField(max_length=32)
     vehicle_registration_id = models.CharField(max_length=32, editable=False)
 
-    renter = models.ForeignKey(User, on_delete=models.CASCADE)
+    renter = models.ForeignKey(User, on_delete=models.CASCADE, editable=False)
 
     price = models.DecimalField(
         max_digits=10,
