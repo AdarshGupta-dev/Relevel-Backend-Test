@@ -5,7 +5,7 @@ from .models import User
 
 
 class UserModelAdmin(BaseUserAdmin):
-    list_display = ("id", "email", "name", "gender",
+    list_display = ("email", "name", "gender",
                     "date_of_birth", "is_admin")
     list_filter = ("is_admin",)
     fieldsets = (
