@@ -4,7 +4,7 @@ endpoint = "http://localhost:8000/user/register/"
 
 
 data = {
-    "email": "test_email1@tes123.com",
+    "email": "test2email1@tes123.com",
     "name": "test name",
     "password": "123..123",
     "gender": "M",

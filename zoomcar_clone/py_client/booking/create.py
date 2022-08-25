@@ -2,7 +2,7 @@ import requests
 
 endpoint = "http://localhost:8000/booking/create/"
 
-Token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxMTc2MzE1LCJpYXQiOjE2NjExNzU3MTUsImp0aSI6IjgxNTUwZWQzOTQ1MDRkNzViMmUzMGU0ZmI4N2Y4OTk2IiwidXNlcl9pZCI6Nn0.mjxXEtlH17ZZcqlJwqF7R89_Nzk8c-OTz_k8lYEWoso"
+Token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjYxNDM3NzAzLCJpYXQiOjE2NjE0MzcxMDMsImp0aSI6ImMxYjIyYTA2MWRmNDRhOTY4NDZkNDhkNWFjNmNhNjQ3IiwidXNlcl9pZCI6OX0.n2iX-Q9gNVIiF_Pn8i3WlqTdF9X9akCpPn3K_TV77Is"
 
 data = {
     "vehicle": "maruti",

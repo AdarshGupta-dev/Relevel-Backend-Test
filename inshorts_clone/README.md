@@ -20,6 +20,6 @@ The successful request should return 200 response code along with the purchase d
 
 Above instructions are a bit vague to me. Is it asking to create api for "seller to modify their ads and enable/disable sell of their goods" or "buyer to purchase goods with adID"?
 
-`json of updated ad` -> pointes to former `purchase detail` -> pointes to later.
+`json of updated ad` -> points to former `purchase detail` -> points to later.
 
 Part of both makes sense, not as a whole but in parts.
